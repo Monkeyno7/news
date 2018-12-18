@@ -1,0 +1,25 @@
+<view class='news-type-list'>
+  <view class="news-type-item {{item === selectedNewsType ? 'news-type-checked': ''}}" data-selected = "{{item}}" bindtap='onTapNewsType' wx:for="{{newsType}}">{{item}}</view>
+</view>
+
+<view class='headline-item' data-id = "{{newsList[0].id}}" bindtap='onTapNewsList'>
+  <image class="headline-news" src="{{newsList[0].firstImage}}">
+  </image>
+  <view class= 'headline-hotsign'>热门</view>
+  <view class= 'headline-title-source'>
+      <view class= 'headline-title'>{{newsList[0].title}}</view>
+      <view class= 'headline-source'>{{newsList[0].source}}    {{newsList[0].date}}</view>
+  </view>
+</view>
+
+<view class='news-list'>
+  <view class="news-item" data-id = "{{item.id}}" bindtap='onTapNewsList' wx:for="{{newsList}}">
+    <view class= 'news-title-source'>
+      <view class= 'news-title'>{{item.title}}</view>
+      <view class= 'news-source'>{{item.source}} {{item.date}}</view>
+    </view>
+    <image class= 'news-image'
+             src='{{item.firstImage}}'>
+    </image>
+  </view>
+</view>

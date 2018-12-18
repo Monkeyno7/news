@@ -1,0 +1,15 @@
+<!--pages/list/list.wxml-->
+<view class='detail-head'>
+  <view class='detail-head-title'>{{title}}</view>
+  <view class='detail-head-source-date-readcount'>
+    <view class='detail-head-source-date'>{{source}} {{date}}</view>
+    <view class='detail-readcount'>{{readCount}}</view>
+  </view>
+</view>
+
+<view class='detail-news' wx:for="{{content}}">
+  <view class='detail-news-message' wx:if="{{item.type!='image'}}">{{item.text}}</view>
+  <image class= 'detail-news-image' wx:if="{{item.type==='image'}}"
+             src='{{item.src}}'>
+  </image>
+</view>
